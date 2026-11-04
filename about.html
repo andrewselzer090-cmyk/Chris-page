@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Christine (Chris) Selzer</title>
+  <style>
+    /* Dark Theme Variables */
+    :root {
+      --bg-main: #0d0d0d;
+      --bg-card: #181818;
+      --text-main: #f0f0f0;
+      --text-muted: #a0a0a0;
+      --accent: #ffffff;
+      --border-color: #262626;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    a:hover {
+      color: var(--text-muted);
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Navigation */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem 6%;
+      background-color: rgba(13, 13, 13, 0.95);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--border-color);
+      backdrop-filter: blur(10px);
+    }
+
+    .logo {
+      font-size: 1.25rem;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    /* Page Container */
+    .page-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 6rem 6% 4rem;
+    }
+
+    .page-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 300;
+      letter-spacing: 2px;
+      margin-bottom: 1.5rem;
+    }
+
+    .intro-tagline {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      margin-bottom: 3rem;
+      line-height: 1.8;
+      border-left: 2px solid var(--accent);
+      padding-left: 1.25rem;
+    }
+
+    /* Bio Layout */
+    .bio-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 4rem;
+      align-items: start;
+      margin-bottom: 5rem;
+    }
+
+    .bio-image img {
+      width: 100%;
+      border-radius: 4px;
+      filter: grayscale(20%);
+      border: 1px solid var(--border-color);
+    }
+
+    .bio-text p {
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+      font-size: 1rem;
+    }
+
+    /* CV / Credentials Section */
+    .cv-section {
+      margin-bottom: 4rem;
+    }
+
+    .cv-section h3 {
+      font-size: 1.3rem;
+      font-weight: 400;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 0.5rem;
+    }
+
+    .cv-list {
+      list-style: none;
+    }
+
+    .cv-list li {
+      margin-bottom: 1.25rem;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .cv-list strong {
+      color: var(--text-main);
+      font-weight: 500;
+    }
+
+    .sub-list {
+      list-style: disc;
+      margin-left: 1.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .sub-list li {
+      margin-bottom: 0.4rem;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border-color);
+      padding: 4rem 6%;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .bio-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+      header {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <div class="logo"><a href="index.html">Christine (Chris) Selzer</a></div>
+    <nav>
+      <ul>
+        <li><a href="index.html#work">Work</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <div class="page-container">
+    <h1 class="page-title">Biography & Statement</h1>
+    <p class="intro-tagline">
+      A multilingual background across Athens, London, New Orleans, and Washington, D.C., blending fine art, photography, and multimedia storytelling.
+    </p>
+
+    <!-- Bio Section -->
+    <div class="bio-grid">
+      <div class="bio-image">
+        <img src="Images/chrisprofile.jpg" alt="Christine Chris Selzer" />
+      </div>
+      <div class="bio-text">
+        <p>I was born in Athens, Greece, where I received a Franco-Hellenic education, attending elementary boarding school in the French canton of Switzerland and graduating from the French Ursuline Nun High School in Athens. I went on to study psychology for four years at Deree, the American College in Athens.</p>
+        <p>Driven by a passion for the arts, I moved to London to study professional makeup for stage, TV, and film at the Makeup Academy, followed by fine arts studies at Croydon College.</p>
+        <p>Upon returning to Greece, I managed my family’s custom men’s tailoring business while working as a makeup artist, stylist, and photographer for musicians and actors. Following the Greek economic crisis, I closed the business and moved to the United States in 2012 with my husband, Louis Selzer.</p>
+        <p>We first settled in New Orleans, where I returned to art and photography as a multimedia artist, while also earning certifications in New Mexico as a yoga teacher and gong player—eventually running my own yoga studio for five years. In 2016, we relocated to Washington, D.C., where I continue to live, work, and refine my digital image-making today. I am fluent in English, French, Italian, and Greek.</p>
+      </div>
+    </div>
+
+    <!-- Selected Exhibitions -->
+    <div class="cv-section">
+      <h3>Selected Exhibitions</h3>
+      <ul class="cv-list">
+        <li><strong>2027 (Upcoming):</strong> International Exhibition on "Shape", Glasgow Gallery of Photography, Scotland</li>
+        <li>
+          <strong>2025–2026:</strong>
+          <ul class="sub-list">
+            <li>Solo Exhibition curated by Federicapaola Capecchi, Opificio della Fotografia, Milan, Italy (May 2025)</li>
+            <li>Exhibition at CathArt Gallery di Carla Pugliano, Varese, Italy</li>
+            <li>EVERLAND Exhibition, Galleria d'Arte IL LEONE, Rome, Italy</li>
+            <li>Art Expo NYC, New York City, USA</li>
+            <li>Duo Collaboration ("chris & kat") with artist Katerina Dramitinou: Exhibited at MuPa Puglia and Opificio della Fotografia</li>
+          </ul>
+        </li>
+        <li>
+          <strong>2024:</strong>
+          <ul class="sub-list">
+            <li>Exhibition at Casa Museo Tadini with Opificio della Fotografia, Milan, Italy</li>
+            <li>International group exhibitions in London, Barcelona, and Rome (supported by Blank Wall Gallery)</li>
+          </ul>
+        </li>
+        <li>
+          <strong>2023:</strong>
+          <ul class="sub-list">
+            <li>Exhibition with Opificio della Fotografia, Venice, Italy</li>
+            <li>Ongoing participation at CIP (Chania International Photo Festival) and B&W Photography Festival, Athens</li>
+          </ul>
+        </li>
+        <li><strong>2018:</strong> Collaborative exhibition with New York photographer Linda Troeller, Apolda, Germany</li>
+        <li><strong>2014, 2017:</strong> RAW: Natural Born Artists Exhibitions (New Orleans, 2014 & Washington, D.C., 2017)</li>
+        <li><strong>Regular Collaborations:</strong> Frequent exhibitions with Blank Wall Gallery (Athens, Greece) and International Photo Festivals.</li>
+      </ul>
+    </div>
+
+    <!-- Monographs & Publications -->
+    <div class="cv-section">
+      <h3>Monographs & Publications</h3>
+      <ul class="cv-list">
+        <li><strong>Monograph / Art Book:</strong> <em>Imperfetto corpo del vero</em> (Published alongside solo exhibition in Milan, May 2025)</li>
+        <li><strong>Featured Inclusion:</strong> 76th Edition of the Atlante dell'Arte Contemporanea (Two featured images with critical commentary)</li>
+        <li><strong>Book Cover:</strong> PhotoMilano On Desire (2023)</li>
+        <li><strong>Featured Editorial & Media:</strong> L'ArteCheMiPiace magazine and blog, ContempoArte Magazine (Featured twice), Quarantena (Santiago, Chile), Illume, and Inspirational Magazine (UK)</li>
+      </ul>
+    </div>
+
+    <!-- Awards & Recognition -->
+    <div class="cv-section">
+      <h3>Awards & Recognition</h3>
+      <ul class="cv-list">
+        <li><strong>Best Image of Contemporary Art:</strong> Awarded at the EVERLAND exhibition, Galleria d'Arte IL LEONE, Rome</li>
+        <li><strong>Leonardo da Vinci International Prize – "The Genius":</strong> Milan, Italy</li>
+        <li><strong>Caravaggio International Prize – "The Genius":</strong> Madrid, Spain</li>
+        <li><strong>International Photography Awards (IPA):</strong> Special Mention</li>
+        <li><strong>50 Shades of Grey Photography Contest:</strong> 2nd Place</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Footer / Contact -->
+  <footer>
+    <div class="social-links">
+      <a href="https://www.facebook.com/share/1G4VRcz6dL/" target="_blank">Facebook</a>
+      <a href="mailto:lentzouchr@yahoo.com">Email Me</a>
+    </div>
+    <p>&copy; 2026 Christine (Chris) Selzer Digital Photography. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
