@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Digital Photography Portfolio</title>
+  <title>Christine (Chris) Selzer | Digital Photography Portfolio</title>
   <style>
     /* Dark Theme Variables */
     :root {
@@ -98,17 +98,14 @@
     /* Artistic Philosophy Statement Section */
     .philosophy-section {
       max-width: 900px;
-      margin: 0 auto 4rem auto;
+      margin: 0 auto 3rem auto;
       padding: 0 6%;
       text-align: center;
+      transition: opacity 0.3s ease;
     }
 
-    .philosophy-section h3 {
-      font-size: 1.3rem;
-      font-weight: 400;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 1.5rem;
+    .philosophy-section.hide {
+      display: none;
     }
 
     .philosophy-section p {
@@ -123,7 +120,7 @@
       justify-content: center;
       gap: 1rem;
       flex-wrap: wrap;
-      padding: 0 6% 3rem;
+      padding: 0 6% 2rem;
       max-width: 1300px;
       margin: 0 auto;
     }
@@ -148,9 +145,26 @@
       border-color: var(--accent);
     }
 
+    /* Category Commentary / Description Banner */
+    .category-description-container {
+      max-width: 900px;
+      margin: 0 auto 3rem auto;
+      padding: 0 6%;
+      text-align: center;
+      min-height: 4rem;
+    }
+
+    .category-description-container p {
+      color: var(--text-muted);
+      font-size: 1rem;
+      line-height: 1.7;
+      letter-spacing: 0.5px;
+      transition: opacity 0.3s ease;
+    }
+
     /* Section Styling */
     section {
-      padding: 2rem 6% 4rem;
+      padding: 0 6% 4rem;
       max-width: 1300px;
       margin: 0 auto;
     }
@@ -246,8 +260,8 @@
     <p>I am a hybrid... I am an image maker.</p>
   </div>
 
-  <!-- Artistic Philosophy Statement -->
-  <div class="philosophy-section">
+  <!-- Artistic Philosophy Statement (Shows ONLY on All Work) -->
+  <div class="philosophy-section" id="main-philosophy">
     <p>
       My approach to art emerges entirely from the unconscious. I never consciously think about what to do; it all flows naturally, as in automatic writing. It's a deep-seated need to express myself. For that, I employ various techniques: I use photography to help create an image, scan objects to transform them into compositions, and often overlay elements. Drawing heavily upon my experience as a painter, and treating post-processing as an essential tool, I view myself not merely as a photographer or painter, but as a hybrid image maker.
     </p>
@@ -255,22 +269,35 @@
 
   <!-- Category Filter Buttons -->
   <div class="filter-container">
-    <button class="filter-btn active" data-filter="general">All Work</button>
-    <button class="filter-btn" data-filter="childhood">Childhood</button>
-    <button class="filter-btn" data-filter="body-sculpted">The Body Sculpted</button>
-    <button class="filter-btn" data-filter="pictorials">Pictorials</button>
-    <button class="filter-btn" data-filter="portraits-bw">Portraits B/W</button>
-    <button class="filter-btn" data-filter="night">Night</button>
-    <button class="filter-btn" data-filter="woman">Woman</button>
-    <button class="filter-btn" data-filter="venezia">Venezia</button>
-    <button class="filter-btn" data-filter="passage">A Passage to...</button>
+    <button class="filter-btn active" data-filter="general" data-desc="">All Work</button>
+    
+    <button class="filter-btn" data-filter="childhood" data-desc="Haunting visually, layered archival fragments, blurred emulsions, and weathered textures dissolve linear time—capturing the fractured echoes, silent endurance, and lingering ghosts of early memory.">Childhood</button>
+    
+    <button class="filter-btn" data-filter="woman" data-desc="A presentation of the female form, where layers of memory, texture, and light dissolve solid boundaries to reveal the multifaceted essence of womanhood, oscillating between intimate vulnerability and quiet strength.">Woman</button>
+    
+    <button class="filter-btn" data-filter="pictorials" data-desc="This collection of pictorial works functions as a visual canvas, merging photography, digital painting, and tactile textures into atmospheric explorations of memory and emotion. Through fluid motion, layered compositions, and a palette spanning from luminous natural elements to stark geometric framing, this part of my work intends to capture the delicate threshold between abstraction and the human form.">Pictorial</button>
+    
+    <button class="filter-btn" data-filter="subversive-bw" data-desc="A visual exploration of identity, memory, and alienation, where high-contrast monochrome tones and surreal montage fracture the familiar into haunting psychological narratives.">Subversive B/W</button>
+    
+    <button class="filter-btn" data-filter="portraits-bw" data-desc="By trying to blur the 'mosso controllato' and stark high-contrast monochrome as delicately as possible, these portraits intend to suspend time. They intend to capture the human form not as a fixed physical boundary, but as a reflection of light, shadow, and quiet interior resonance.">Portraits B/W</button>
+    
+    <button class="filter-btn" data-filter="body-sculpted" data-desc="In this series, the human form transcends anatomy to become pure topography. Through high-contrast shadow and dramatic contouring, flesh is sculpted into architecture—where bone, muscle, and posture, try to fold into timeless monuments of light and dark.">The Body Sculpted</button>
+    
+    <button class="filter-btn" data-filter="venezia" data-desc="One part of my images depicting Venice, looks like a dreamlike, impressionistic journey through the Floating City, where historic palazzos and quiet canals, are filtered through weather-strewn glass and mist. Reality and reflection, blur into a visual canvas of muted light and watercolor textures.">Venezia</button>
+    
+    <button class="filter-btn" data-filter="passage" data-desc="This assimilation of images, implies death, framed not as a definitive wall, but as a liminal, multi-layered transition. Through double-exposed portraiture, haunting silhouettes, and cosmic glows, individual identity appears to gently dissolve into history and memory. Fractured, multiplying eyes serve as quiet witnesses to this departure, while tactile textures, raw natural elements, and long, shadowed pathways evoke both the physical reality of decay and the active, solitary journey toward the unknown.">A Passage to...</button>
+  </div>
+
+  <!-- Category Commentary Display Banner -->
+  <div class="category-description-container">
+    <p id="category-desc"></p>
   </div>
 
   <!-- Portfolio Section -->
   <section id="work">
     <div class="gallery-grid">
       
-      <!-- Your First 6 General Pictures -->
+      <!-- Original 6 General Pictures (Only these show under 'All Work') -->
       <div class="gallery-item" data-category="general">
         <img src="Images/pic2.jpg" alt="Photo 1" />
         <div class="gallery-caption"><span>^/1</span></div>
@@ -332,130 +359,6 @@
         <div class="gallery-caption"><span>Childhood 06</span></div>
       </div>
 
-      <!-- The Body Sculpted Category Pictures -->
-      <div class="gallery-item hide" data-category="body-sculpted">
-        <img src="Images/body1.jpg" alt="The Body Sculpted 1" />
-        <div class="gallery-caption"><span>Sculpted 01</span></div>
-      </div>
-
-      <div class="gallery-item hide" data-category="body-sculpted">
-        <img src="Images/body2.jpg" alt="The Body Sculpted 2" />
-        <div class="gallery-caption"><span>Sculpted 02</span></div>
-      </div>
-
-      <div class="gallery-item hide" data-category="body-sculpted">
-        <img src="Images/body3.jpg" alt="The Body Sculpted 3" />
-        <div class="gallery-caption"><span>Sculpted 03</span></div>
-      </div>
-
-      <div class="gallery-item hide" data-category="body-sculpted">
-        <img src="Images/body4.jpg" alt="The Body Sculpted 4" />
-        <div class="gallery-caption"><span>Sculpted 04</span></div>
-      </div>
-
-      <div class="gallery-item hide" data-category="body-sculpted">
-        <img src="Images/body5.jpg" alt="The Body Sculpted 5" />
-        <div class="gallery-caption"><span>Sculpted 05</span></div>
-      </div>
-
-      <div class="gallery-item hide" data-category="body-sculpted">
-        <img src="Images/body6.jpg" alt="The Body Sculpted 6" />
-        <div class="gallery-caption"><span>Sculpted 06</span></div>
-      </div>
-
-      <!-- Pictorials Category Pictures -->
-      <div class="gallery-item hide" data-category="pictorials">
-        <img src="Images/pictorial1.jpg" alt="Pictorials 1" />
-        <div class="gallery-caption"><span>Pictorial 01</span></div>
-      </div>
-
-      <div class="gallery-item hide" data-category="pictorials">
-        <img src="Images/pictorial2.jpg" alt="Pictorials 2" />
-        <div class="gallery-caption"><span>Pictorial 02</span></div>
-      </div>
-
-      <div class="gallery-item hide" data-category="pictorials">
-        <img src="Images/pictorial3.jpg" alt="Pictorials 3" />
-        <div class="gallery-caption"><span>Pictorial 03</span></div>
-      </div>
-
-      <div class="gallery-item hide" data-category="pictorials">
-        <img src="Images/pictorial4.jpg" alt="Pictorials 4" />
-        <div class="gallery-caption"><span>Pictorial 04</span></div>
-      </div>
-
-      <div class="gallery-item hide" data-category="pictorials">
-        <img src="Images/pictorial5.jpg" alt="Pictorials 5" />
-        <div class="gallery-caption"><span>Pictorial 05</span></div>
-      </div>
-
-      <div class="gallery-item hide" data-category="pictorials">
-        <img src="Images/pictorial6.jpg" alt="Pictorials 6" />
-        <div class="gallery-caption"><span>Pictorial 06</span></div>
-      </div>
-
-      <!-- Portraits B/W Category Pictures -->
-      <div class="gallery-item hide" data-category="portraits-bw">
-        <img src="Images/portrait1.jpg" alt="Portrait B/W 1" />
-        <div class="gallery-caption"><span>Portrait B/W 01</span></div>
-      </div>
-
-      <div class="gallery-item hide" data-category="portraits-bw">
-        <img src="Images/portrait2.jpg" alt="Portrait B/W 2" />
-        <div class="gallery-caption"><span>Portrait B/W 02</span></div>
-      </div>
-
-      <div class="gallery-item hide" data-category="portraits-bw">
-        <img src="Images/portrait3.jpg" alt="Portrait B/W 3" />
-        <div class="gallery-caption"><span>Portrait B/W 03</span></div>
-      </div>
-
-      <div class="gallery-item hide" data-category="portraits-bw">
-        <img src="Images/portrait4.jpg" alt="Portrait B/W 4" />
-        <div class="gallery-caption"><span>Portrait B/W 04</span></div>
-      </div>
-
-      <div class="gallery-item hide" data-category="portraits-bw">
-        <img src="Images/portrait5.jpg" alt="Portrait B/W 5" />
-        <div class="gallery-caption"><span>Portrait B/W 05</span></div>
-      </div>
-
-      <div class="gallery-item hide" data-category="portraits-bw">
-        <img src="Images/portrait6.jpg" alt="Portrait B/W 6" />
-        <div class="gallery-caption"><span>Portrait B/W 06</span></div>
-      </div>
-
-      <!-- Night Category Pictures -->
-      <div class="gallery-item hide" data-category="night">
-        <img src="Images/night1.jpg" alt="Night 1" />
-        <div class="gallery-caption"><span>Night 01</span></div>
-      </div>
-
-      <div class="gallery-item hide" data-category="night">
-        <img src="Images/night2.jpg" alt="Night 2" />
-        <div class="gallery-caption"><span>Night 02</span></div>
-      </div>
-
-      <div class="gallery-item hide" data-category="night">
-        <img src="Images/night3.jpg" alt="Night 3" />
-        <div class="gallery-caption"><span>Night 03</span></div>
-      </div>
-
-      <div class="gallery-item hide" data-category="night">
-        <img src="Images/night4.jpg" alt="Night 4" />
-        <div class="gallery-caption"><span>Night 04</span></div>
-      </div>
-
-      <div class="gallery-item hide" data-category="night">
-        <img src="Images/night5.jpg" alt="Night 5" />
-        <div class="gallery-caption"><span>Night 05</span></div>
-      </div>
-
-      <div class="gallery-item hide" data-category="night">
-        <img src="Images/night6.jpg" alt="Night 6" />
-        <div class="gallery-caption"><span>Night 06</span></div>
-      </div>
-
       <!-- Woman Category Pictures -->
       <div class="gallery-item hide" data-category="woman">
         <img src="Images/woman1.jpg" alt="Woman 1" />
@@ -515,6 +418,130 @@
       <div class="gallery-item hide" data-category="woman">
         <img src="Images/woman12.jpg" alt="Woman 12" />
         <div class="gallery-caption"><span>Woman 12</span></div>
+      </div>
+
+      <!-- Pictorials Category Pictures -->
+      <div class="gallery-item hide" data-category="pictorials">
+        <img src="Images/pictorial1.jpg" alt="Pictorials 1" />
+        <div class="gallery-caption"><span>Pictorial 01</span></div>
+      </div>
+
+      <div class="gallery-item hide" data-category="pictorials">
+        <img src="Images/pictorial2.jpg" alt="Pictorials 2" />
+        <div class="gallery-caption"><span>Pictorial 02</span></div>
+      </div>
+
+      <div class="gallery-item hide" data-category="pictorials">
+        <img src="Images/pictorial3.jpg" alt="Pictorials 3" />
+        <div class="gallery-caption"><span>Pictorial 03</span></div>
+      </div>
+
+      <div class="gallery-item hide" data-category="pictorials">
+        <img src="Images/pictorial4.jpg" alt="Pictorials 4" />
+        <div class="gallery-caption"><span>Pictorial 04</span></div>
+      </div>
+
+      <div class="gallery-item hide" data-category="pictorials">
+        <img src="Images/pictorial5.jpg" alt="Pictorials 5" />
+        <div class="gallery-caption"><span>Pictorial 05</span></div>
+      </div>
+
+      <div class="gallery-item hide" data-category="pictorials">
+        <img src="Images/pictorial6.jpg" alt="Pictorials 6" />
+        <div class="gallery-caption"><span>Pictorial 06</span></div>
+      </div>
+
+      <!-- Subversive B/W Category Pictures -->
+      <div class="gallery-item hide" data-category="subversive-bw">
+        <img src="Images/subversive1.jpg" alt="Subversive B/W 1" />
+        <div class="gallery-caption"><span>Subversive B/W 01</span></div>
+      </div>
+
+      <div class="gallery-item hide" data-category="subversive-bw">
+        <img src="Images/subversive2.jpg" alt="Subversive B/W 2" />
+        <div class="gallery-caption"><span>Subversive B/W 02</span></div>
+      </div>
+
+      <div class="gallery-item hide" data-category="subversive-bw">
+        <img src="Images/subversive3.jpg" alt="Subversive B/W 3" />
+        <div class="gallery-caption"><span>Subversive B/W 03</span></div>
+      </div>
+
+      <div class="gallery-item hide" data-category="subversive-bw">
+        <img src="Images/subversive4.jpg" alt="Subversive B/W 4" />
+        <div class="gallery-caption"><span>Subversive B/W 04</span></div>
+      </div>
+
+      <div class="gallery-item hide" data-category="subversive-bw">
+        <img src="Images/subversive5.jpg" alt="Subversive B/W 5" />
+        <div class="gallery-caption"><span>Subversive B/W 05</span></div>
+      </div>
+
+      <div class="gallery-item hide" data-category="subversive-bw">
+        <img src="Images/subversive6.jpg" alt="Subversive B/W 6" />
+        <div class="gallery-caption"><span>Subversive B/W 06</span></div>
+      </div>
+
+      <!-- Portraits B/W Category Pictures -->
+      <div class="gallery-item hide" data-category="portraits-bw">
+        <img src="Images/portrait1.jpg" alt="Portrait B/W 1" />
+        <div class="gallery-caption"><span>Portrait B/W 01</span></div>
+      </div>
+
+      <div class="gallery-item hide" data-category="portraits-bw">
+        <img src="Images/portrait2.jpg" alt="Portrait B/W 2" />
+        <div class="gallery-caption"><span>Portrait B/W 02</span></div>
+      </div>
+
+      <div class="gallery-item hide" data-category="portraits-bw">
+        <img src="Images/portrait3.jpg" alt="Portrait B/W 3" />
+        <div class="gallery-caption"><span>Portrait B/W 03</span></div>
+      </div>
+
+      <div class="gallery-item hide" data-category="portraits-bw">
+        <img src="Images/portrait4.jpg" alt="Portrait B/W 4" />
+        <div class="gallery-caption"><span>Portrait B/W 04</span></div>
+      </div>
+
+      <div class="gallery-item hide" data-category="portraits-bw">
+        <img src="Images/portrait5.jpg" alt="Portrait B/W 5" />
+        <div class="gallery-caption"><span>Portrait B/W 05</span></div>
+      </div>
+
+      <div class="gallery-item hide" data-category="portraits-bw">
+        <img src="Images/portrait6.jpg" alt="Portrait B/W 6" />
+        <div class="gallery-caption"><span>Portrait B/W 06</span></div>
+      </div>
+
+      <!-- The Body Sculpted Category Pictures -->
+      <div class="gallery-item hide" data-category="body-sculpted">
+        <img src="Images/body1.jpg" alt="The Body Sculpted 1" />
+        <div class="gallery-caption"><span>Sculpted 01</span></div>
+      </div>
+
+      <div class="gallery-item hide" data-category="body-sculpted">
+        <img src="Images/body2.jpg" alt="The Body Sculpted 2" />
+        <div class="gallery-caption"><span>Sculpted 02</span></div>
+      </div>
+
+      <div class="gallery-item hide" data-category="body-sculpted">
+        <img src="Images/body3.jpg" alt="The Body Sculpted 3" />
+        <div class="gallery-caption"><span>Sculpted 03</span></div>
+      </div>
+
+      <div class="gallery-item hide" data-category="body-sculpted">
+        <img src="Images/body4.jpg" alt="The Body Sculpted 4" />
+        <div class="gallery-caption"><span>Sculpted 04</span></div>
+      </div>
+
+      <div class="gallery-item hide" data-category="body-sculpted">
+        <img src="Images/body5.jpg" alt="The Body Sculpted 5" />
+        <div class="gallery-caption"><span>Sculpted 05</span></div>
+      </div>
+
+      <div class="gallery-item hide" data-category="body-sculpted">
+        <img src="Images/body6.jpg" alt="The Body Sculpted 6" />
+        <div class="gallery-caption"><span>Sculpted 06</span></div>
       </div>
 
       <!-- Venezia Category Pictures -->
@@ -591,10 +618,12 @@
     <p>&copy; 2026 Christine (Chris) Selzer Digital Photography. All rights reserved.</p>
   </footer>
 
-  <!-- Complete Filtering Script -->
+  <!-- Dynamic Filter Script -->
   <script>
     const filterButtons = document.querySelectorAll('.filter-btn');
     const galleryItems = document.querySelectorAll('.gallery-item');
+    const categoryDesc = document.getElementById('category-desc');
+    const mainPhilosophy = document.getElementById('main-philosophy');
 
     filterButtons.forEach(button => {
       button.addEventListener('click', () => {
@@ -604,21 +633,29 @@
         button.classList.add('active');
 
         const filterValue = button.getAttribute('data-filter');
+        const newDesc = button.getAttribute('data-desc');
 
+        // Show philosophy statement ONLY on 'All Work', hide on other categories
+        if (filterValue === 'general') {
+          mainPhilosophy.classList.remove('hide');
+        } else {
+          mainPhilosophy.classList.add('hide');
+        }
+
+        // Update the category commentary text
+        categoryDesc.style.opacity = 0;
+        setTimeout(() => {
+          categoryDesc.textContent = newDesc;
+          categoryDesc.style.opacity = 1;
+        }, 150);
+
+        // Filter gallery items (Strict matching: 'general' shows only 'general' items)
         galleryItems.forEach(item => {
           const itemCategory = item.getAttribute('data-category');
-          if (filterValue === 'general') {
-            if (itemCategory === 'general') {
-              item.classList.remove('hide');
-            } else {
-              item.classList.add('hide');
-            }
+          if (itemCategory === filterValue) {
+            item.classList.remove('hide');
           } else {
-            if (itemCategory === filterValue) {
-              item.classList.remove('hide');
-            } else {
-              item.classList.add('hide');
-            }
+            item.classList.add('hide');
           }
         });
       });
